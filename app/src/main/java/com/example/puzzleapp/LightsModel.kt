@@ -1,5 +1,6 @@
 package com.example.puzzleapp
 
+import android.util.Log
 import java.lang.Exception
 
 class LightsModel (gridSize: Int) {
@@ -51,7 +52,11 @@ class LightsModel (gridSize: Int) {
     }
 
     fun reset(): Unit {
-        return
+        for (i in 0 until n) {
+            for (j in 0 until n) {
+                grid[i][j] = 0
+            }
+        }
     }
 
     override fun toString(): String {

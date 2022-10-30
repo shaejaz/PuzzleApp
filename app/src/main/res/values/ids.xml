@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="score" type="id" />
+    <item name="reset" type="id" />
+    <item name="lightsview" type="id" />
+</resources>

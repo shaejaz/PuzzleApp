@@ -23,7 +23,7 @@ class LightsView: View {
     private val cols = intArrayOf(fgOff, fgOn)
 
     private var n = 5
-    private var model: LightsModel? = null
+    var model: LightsModel? = null
     private var size = 0
 
     private var minLen = 0
