@@ -1,9 +1,10 @@
 package com.example.puzzleapp
 
 import android.util.Log
+import java.io.Serializable
 import java.lang.Exception
 
-class LightsModel (gridSize: Int) {
+class LightsModel (gridSize: Int) : Serializable {
 
     var n = gridSize
 
