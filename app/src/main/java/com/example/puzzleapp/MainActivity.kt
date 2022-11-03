@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +19,14 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             lightsView.model?.reset()
             lightsView.invalidate()
+
+            lightsView.model?.getScore()?.let { score -> updateScore(score) }
         }
+    }
+
+    fun updateScore(score: Int): Unit {
+        val scoreText = findViewById<TextView>(R.id.score)
+        scoreText.text = "Score: $score"
+        scoreText.invalidate()
     }
 }

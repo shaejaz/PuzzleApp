@@ -48,7 +48,17 @@ class LightsModel (gridSize: Int) {
     }
 
     fun isSolved(): Boolean {
-        return false
+        return getScore() == (n * n)
+    }
+
+    fun getScore(): Int {
+        var total = 0
+        for (i in 0 until n) {
+            for (j in 0 until n) {
+                total += grid[i][j]
+            }
+        }
+        return total
     }
 
     fun reset(): Unit {

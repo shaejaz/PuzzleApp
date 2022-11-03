@@ -70,6 +70,7 @@ class LightsView: View {
             val i = ((curX - xOff.toFloat()) / size.toFloat()).toInt()
             val j = ((curY - yOff.toFloat()) / size.toFloat()).toInt()
             model?.tryFlip(i, j)
+            model?.getScore()?.let { score -> (context as MainActivity).updateScore(score) }
             postInvalidate()
         }
 
