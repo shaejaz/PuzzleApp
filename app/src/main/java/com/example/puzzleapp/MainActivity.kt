@@ -10,6 +10,10 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private val nDefault = 5
@@ -26,6 +30,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         setContentView(R.layout.activity_main)
+
+        GlobalScope.launch(Dispatchers.Main) {
+            startActivity(Intent(this@MainActivity, SplashScreen::class.java))
+        }
 
         val lightsView = findViewById<LightsView>(R.id.lightsview)
         lightsView.model = getModel()
